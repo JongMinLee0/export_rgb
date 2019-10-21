@@ -1,0 +1,19 @@
+.navbar{
+    background-color: transparent;
+    border: 0;
+}
+
+/* navbar menu font color */
+#myNavbar > ul > li a{
+    color: white;
+    font-weight: bold;
+}
+
+body > nav > div > div.navbar-header > button{
+    background-color: white;
+}
+
+body > nav > div > div.navbar-header > a{
+    color: white;
+    font-weight: bold;
+}
