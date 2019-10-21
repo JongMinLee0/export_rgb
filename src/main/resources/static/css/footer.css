@@ -1,7 +1,7 @@
+/* footer content wrap */
 footer{
     width: 100%;
     height: 250px;
-    border: 1px solid red;
 }
 
 .container .row{
@@ -13,11 +13,12 @@ footer{
     margin-top: 40px;
 }
 
+/* github icon */
 #git_icon{
     font-size: 50px !important;
     margin-bottom: 40px;
 }
-
+/* icon link */
 #icon_wrap{
     color: black !important;
 }

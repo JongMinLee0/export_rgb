@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
          pageEncoding="EUC-KR"%>
-
+<%-- navigation bar --%>
+<link rel="stylesheet" href="/static/css/header.css">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -13,9 +14,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="">COLOR</a></li>
-                <li><a href="">CONTACT</a></li>
+                <li><a href="/main#about">ABOUT</a></li>
+                <li><a href="/color">COLOR</a></li>
+                <li><a href="/contact">CONTACT</a></li>
             </ul>
         </div>
     </div>

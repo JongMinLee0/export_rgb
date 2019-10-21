@@ -7,8 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/main")
-    public String jsp() throws Exception{
+    public String mainPage(){
         return "index";
     }
+
+    @RequestMapping("/color")
+    public String colorPage(){
+        return "color";
+    }
+
+    @RequestMapping("/contact")
+    public String contactPage(){
+        return "contact";
+    }
+
 
 }
