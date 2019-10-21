@@ -21,5 +21,9 @@ public class MainController {
         return "contact";
     }
 
+    @RequestMapping("/popUp")
+    public String colorPopup(){
+        return "colorPopup";
+    }
 
 }
