@@ -68,4 +68,11 @@ $(document).ready(function () {
         }
     }
 
+    $('#popUp').on('click', function(){
+        var url = '/popUp';
+        var name = 'colorPopup';
+        var option = "width = 440, height = 200, top = 100, left = 200, location = no";
+        window.open(url, name, option);
+    });
+
 });
