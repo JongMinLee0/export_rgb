@@ -1,8 +1,11 @@
 #main_wrap{
     width:100%;
     height: 800px;
-    border: 1px solid black;
     margin-top: 50px;
+}
+
+body{
+    min-width: 1000px;
 }
 
 #color_main{
@@ -13,22 +16,21 @@
 
 #description{
     width: 100%;
-    height: 200px;
-    border: 1px solid green;
+    height: 100px;
 }
 
 #image{
     width: 50%;
     height: 500px;
-    border: 1px solid brown;
     float: left;
+    min-width: 400px;
 }
 
 #click{
     width: 50%;
     height: 500px;
-    border: 1px solid blue;
     float: left;
+    min-width: 400px;
 }
 
 #upload_img{
@@ -65,6 +67,7 @@
     text-align:center;
     vertical-align:middle;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 #image input[type="file"] {
@@ -89,7 +92,25 @@
     height: 300px;
 }
 
+#rgb_chart{
+    height: 300px;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    min-width: 400px;
+}
+
 #color_result{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    float: left;
+    margin-left: 50px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+#color_result2{
     width: 50px;
     height: 50px;
     background-color: black;
@@ -101,5 +122,33 @@
 
 .colorText{
     width: 100px;
+}
+
+#myNavbar > ul > li a{
+    color: black !important;
+}
+body > nav > div > div.navbar-header > a{
+    color: black !important;
+}
+
+#image_description{
+    width: 50%;
+    height: 100px;
+    float: left;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#rgb_description{
+    width: 50%;
+    height: 100px;
+    float: left;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 1px solid black;
 }
 

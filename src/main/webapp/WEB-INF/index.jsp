@@ -21,7 +21,9 @@
 
 </div>
 <div id="about">
-
+    <div id="about_image_wrap">
+        <img src="/static/images/about.png" id="about_img" />
+    </div>
 </div>
 
 <%-- footer --%>

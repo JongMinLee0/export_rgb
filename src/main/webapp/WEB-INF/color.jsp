@@ -19,7 +19,12 @@
 <div id="main_wrap">
     <div id="color_main">
         <div id="description">
-
+            <div id="image_description">
+                Upload an image and find the color you want.
+            </div>
+            <div id="rgb_description">
+                Click the color you want and check the code.
+            </div>
         </div>
         <div id="image">
             <div id="input_wrap">
@@ -33,15 +38,24 @@
             <div class="input_rgb">
                 <div id="color_result">
                 </div>
-                RGB : <input type="text" id="rcolor" class="colorText" readonly="readonly" value="0"/>
-                <input type="text" id="gcolor" class="colorText" readonly="readonly" value="0"/>
-                <input type="text" id="bcolor" class="colorText" readonly="readonly" value="0"/>
+                RGB : <input type="text" id="upload_rcolor" class="colorText" readonly="readonly" value="0"/>
+                <input type="text" id="upload_gcolor" class="colorText" readonly="readonly" value="0"/>
+                <input type="text" id="upload_bcolor" class="colorText" readonly="readonly" value="0"/>
                 <br /><br />
-                HEX : <input type="text" id="hexcolor" class="colorText" readonly="readonly" value="#000000"/>
+                HEX : <input type="text" id="upload_hexcolor" class="colorText" readonly="readonly" value="#000000"/>
             </div>
         </div>
         <div id="click">
-            <button id="popUp">Popup</button>
+            <img src="/static/images/rgb_chart.png" id="rgb_chart"/>
+            <div class="input_rgb">
+                <div id="color_result2">
+                </div>
+                RGB : <input type="text" id="rcolor2" class="colorText" readonly="readonly" value="0"/>
+                <input type="text" id="gcolor2" class="colorText" readonly="readonly" value="0"/>
+                <input type="text" id="bcolor2" class="colorText" readonly="readonly" value="0"/>
+                <br /><br />
+                HEX : <input type="text" id="hexcolor2" class="colorText" readonly="readonly" value="#000000"/>
+            </div>
 
         </div>
     </div>

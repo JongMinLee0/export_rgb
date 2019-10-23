@@ -4,8 +4,7 @@ $(document).ready(function () {
         "background-color": "#fff",
         "border-bottom": "1px solid rgb(229,229,229)"
     });
-    $('#myNavbar > ul > li a').css("color", "black");
-    $('body > nav > div > div.navbar-header > button').css("background-color", "black");
+    $('body > nav > div > div.navbar-header > button').css("background-color", "black !important");
 
     //    image preview
     function readInputFile(input) {
@@ -39,21 +38,49 @@ $(document).ready(function () {
         canvas.height = img.height;
         canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
         var pixelData = canvas.getContext('2d').getImageData(offsetX, offsetY, 1, 1).data;
-        $('#rcolor').val(pixelData[0]);
-        $('#gcolor').val(pixelData[1]);
-        $('#bcolor').val(pixelData[2]);
+        $('#upload_rcolor').val(pixelData[0]);
+        $('#upload_gcolor').val(pixelData[1]);
+        $('#upload_bcolor').val(pixelData[2]);
 
         var rgbColor = 'rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')';
         var resultHex = rgb2hex(rgbColor);
-        $('#hexcolor').val(resultHex);
+        $('#upload_hexcolor').val(resultHex);
 
         $('#color_result').css({
             'background-color': resultHex
         })
     };
 
+
+    // click image
+    function rgb_chart() {
+        var offsetX = event.offsetX;
+        var offsetY = event.offsetY;
+        var img = document.getElementById('rgb_chart');
+        var canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+        var pixelData = canvas.getContext('2d').getImageData(offsetX, offsetY, 1, 1).data;
+        $('#rcolor2').val(pixelData[0]);
+        $('#gcolor2').val(pixelData[1]);
+        $('#bcolor2').val(pixelData[2]);
+
+        var rgbColor = 'rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')';
+        var resultHex = rgb2hex(rgbColor);
+        $('#hexcolor2').val(resultHex);
+
+        $('#color_result2').css({
+            'background-color': resultHex
+        })
+    };
+
     $('#preview').on('click', function () {
         clickImage();
+    });
+
+    $('#rgb_chart').on('click',function(){
+        rgb_chart();
     });
 
     function rgb2hex(rgb) {
@@ -68,11 +95,5 @@ $(document).ready(function () {
         }
     }
 
-    $('#popUp').on('click', function(){
-        var url = '/popUp';
-        var name = 'colorPopup';
-        var option = "width = 440, height = 200, top = 100, left = 200, location = no";
-        window.open(url, name, option);
-    });
 
 });

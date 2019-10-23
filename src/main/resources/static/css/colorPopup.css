@@ -19,6 +19,7 @@
     text-align:center;
     vertical-align:middle;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 #color_result{
@@ -33,4 +34,5 @@
 
 .colorText{
     width: 100px;
+    margin-top: 10px;
 }
