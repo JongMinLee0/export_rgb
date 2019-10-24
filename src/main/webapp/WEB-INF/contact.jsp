@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/static/css/contact.css" />
     <script src="/static/js/bootstrap.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta charset="UTF-8">
     <title>Export RGB Main</title>
 </head>

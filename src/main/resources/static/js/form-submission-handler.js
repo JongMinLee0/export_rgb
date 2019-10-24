@@ -1,4 +1,4 @@
-(function() {
+$(document).ready(function() {
     // get all data in form and return object
     function getFormData(form) {
         var elements = form.elements;
@@ -53,55 +53,55 @@
     function handleFormSubmit(event) {  // handles form submit without any jquery
         event.preventDefault();           // we are submitting via xhr below
         var form = event.target;
-        var formData = getFormData(form);
-        var data = formData.data;
+        var formData = $('#form_wrap').serialize();
+        var data = $('#form_wrap').serialize();
 
         // If a honeypot field is filled, assume it was done so by a spam bot.
         if (formData.honeypot) {
             return false;
         }
 
+        if($('#name').val() == '' || $('#email').val() == '' || $('#message').val() == ''){
+            swal('Please fill in all the forms.');
+            return false;
+        }
+
         disableAllButtons(form);
-        var url = form.action;
+        var url = $('#form_wrap').attr('action');
+        console.log('url : ' + url);
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
         // xhr.withCredentials = true;
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                form.reset();
-                var formElements = form.querySelector(".form-elements")
-                if (formElements) {
-                    formElements.style.display = "none"; // hide form
-                }
-                var thankYouMessage = form.querySelector(".thankyou_message");
-                if (thankYouMessage) {
-                    thankYouMessage.style.display = "block";
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    swal('Email sent successfully').then((value) => {
+                        location.href='/main';
+                    });
                 }
             }
         };
-        // url encode form data for sending as post data
-        var encoded = Object.keys(data).map(function(k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-        }).join('&');
-        xhr.send(encoded);
+        xhr.send(data);
     }
 
     function loaded() {
         // bind to the submit event of our form
         var forms = document.querySelectorAll("form.gform");
-        console.log('forms : ' + forms);
         for (var i = 0; i < forms.length; i++) {
             forms[i].addEventListener("submit", handleFormSubmit, false);
         }
     };
-    document.addEventListener("DOMContentLoaded", loaded, false);
 
     function disableAllButtons(form) {
         var buttons = form.querySelectorAll("button");
-        console.log('buttons :' + buttons);
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].disabled = true;
         }
     }
-})(); 
+
+    loaded();
+
+    $('#sendEmail').on('click',handleFormSubmit);
+
+});
